@@ -8,10 +8,22 @@
         <div class='box'>
             <div id='submittedInfo'>
                 <h3>Submitted Info</h3>
+
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <p>{{message}}</p>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
                 <h2>Name: {{name}}</h2><br>
+                
+                
                 <h2>Dojo Location: {{dojolocation}}</h2><br>
                 <h2>Favorite Language: {{language}}</h2><br>
                 <h2>Comment: {{comment}}</h2>
+                
             </div>
             <button type="button"><a href="/">Go back</a></button>
         </div>
